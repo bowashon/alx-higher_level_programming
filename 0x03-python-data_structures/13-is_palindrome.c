@@ -54,6 +54,11 @@ listint_t *mid_point(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
+	if (head == NULL)
+	{
+		return (0);
+	}
+
 	listint_t *mid = mid_point(*head);
 	listint_t *reversed_second_half = reverse_linked_list(mid->next);
 	listint_t *current = *head;
