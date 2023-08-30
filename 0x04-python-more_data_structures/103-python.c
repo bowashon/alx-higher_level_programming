@@ -14,7 +14,7 @@ void print_python_list(PyObject *p)
 	PyVarObject *var = (PyVarObject *)p;
 
 	size = var->ob_size;
-	alloc = list->allocated
+	alloc = list->allocated;
 
 	printf("[*] Python list info");
 	printf("[*] Size of the Python List = %d\n", size);
@@ -49,7 +49,7 @@ void print_python_bytes(PyObject *p)
 	if (((PyVarObject *)p)->ob_size > 10)
 		size = 10;
 	else
-		size = ((PyVarObject *p)p)->ob_size + 1;
+		size = ((PyVarObject *)p)->ob_size + 1;
 	printf("  first %d bytes: ", size);
 	for (i = 0; i < size; i++)
 	{
@@ -57,7 +57,7 @@ void print_python_bytes(PyObject *p)
 		if (i == (size - 1))
 			printf("\n");
 		else
-			printf(" ")'
+			printf(" ");
 	}
 }
 
