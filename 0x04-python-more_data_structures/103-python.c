@@ -11,7 +11,7 @@ void print_python_list(PyObject *p)
 	long int len, i, lim;
 
 	printf("[.] bytes object info\n");
-	if (!PyBytes_check(p))
+	if (!PyBytes_Check(p))
 	{
 		printf(" [ERROR] Invalid Bytes Object\n");
 		return;
@@ -27,10 +27,10 @@ void print_python_list(PyObject *p)
 
 	for (i = 0; i < lim; i++)
 	{
-		if (stf[i] >= 0)
-			printf(" %02x", str[i] & 0xff);
+		if (str[i] >= 0)
+			printf(" %02x", (unsigned char)str[i]);
 		else
-			printf(" %02x", 256 + str[i]);
+			printf(" %02x", 256 + (unsigned char)str[i]);
 	}
 	putchar('\n');
 }
@@ -40,7 +40,7 @@ void print_python_list(PyObject *p)
  * @p: python object
  *
  */
-void print_python_list(PyObject *p)
+void print_python_bytes(PyObject *p)
 {
 	long int len, i;
 	PyListObject *list;
