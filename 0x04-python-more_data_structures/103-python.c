@@ -5,7 +5,7 @@
  * @p: python object
  *
  */
-void print_python_list(PyObject *p)
+void print_python_bytes(PyObject *p)
 {
 	char *str;
 	long int len, i, lim;
@@ -22,7 +22,7 @@ void print_python_list(PyObject *p)
 	printf(" len: %ld\n", len);
 	printf(" trying string: %s\n", str);
 
-	lim = len > 10 ? 10 : len + 1;
+	lim = len > 10 ? 10 : len;
 	printf(" first %ld bytes:", lim);
 
 	for (i = 0; i < lim; i++)
@@ -40,7 +40,7 @@ void print_python_list(PyObject *p)
  * @p: python object
  *
  */
-void print_python_bytes(PyObject *p)
+void print_python_list(PyObject *p)
 {
 	long int len, i;
 	PyListObject *list;
@@ -56,7 +56,8 @@ void print_python_bytes(PyObject *p)
 	for (i = 0; i < len; i++)
 	{
 		object = list->ob_item[i];
-		printf("Element %ld: %s\n",  i, Py_TYPE(object)->tp_name);
+		printf("Element %ld: %s\n",  i,
+		((PyTypeObject *)(object->ob_type))->tp_name);
 		if (PyBytes_Check(object))
 			print_python_bytes(object);
 	}
