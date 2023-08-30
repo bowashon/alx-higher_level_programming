@@ -5,7 +5,7 @@
  * @p: python object
  *
  */
-void print_python_bytes(PyOject *p)
+void print_python_list(PyObject *p)
 {
 	char *str;
 	long int len, i, lim;
