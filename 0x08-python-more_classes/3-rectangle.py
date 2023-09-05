@@ -31,19 +31,17 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """Calculate the area of the rectangle"""
         return self.__width * self.__height
 
     def perimeter(self):
+        """Calculate the perimeter of the rectangle"""
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        rectangle_str = []
-        for i in range(self.__height):
-            [rectangle_str.append('#') for j in range(self.__width)]
-            if i != self.__height -1:
-                rectangle_str.append("\n")
-
-    def __repr__(self):
-        return ("".join(rectangle_str))
+        rectangle_str = ""
+        rectangle_str += "\n".join("#" * self.__width
+                                   for i in range(self.__height))
+        return rectangle_str
