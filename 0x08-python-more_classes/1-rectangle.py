@@ -1,5 +1,16 @@
 #!/usr/bin/python3
+"""To create a class Rectangle"""
+
+
 class Rectangle:
+    """
+    Defines a class Rectangle
+
+    Attributes
+    -----------
+    width and height
+    """
+
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
