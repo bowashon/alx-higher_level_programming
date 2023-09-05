@@ -1,5 +1,14 @@
 #!/usr/bin/python3
+"""To define a class with str definition"""
+
+
 class Rectangle:
+    """
+    Defines the class with
+    Attributes
+    ----------
+    with and height
+    """
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
