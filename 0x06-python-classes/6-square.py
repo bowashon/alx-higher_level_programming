@@ -36,9 +36,9 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self):
+    def position(self, value):
         """Defines or set position values."""
-        if (not isinstance(value, turple)) or \
+        if (not isinstance(value, tuple)) or \
             len(value) != 2 or \
             not all(isinstance(num, int) for num in value) or \
                 not all(num >= 0 for num in value):
@@ -50,13 +50,13 @@ class Square:
         return self.__size * self.__size
 
     def my_print(self):
-        """Print the square with 'H' character."""
+        """Print the square with '#' character."""
         if self.__size == 0:
             print(" ")
             return
-    [print(" ") for i in range(0, self._position[0])]
-    else:
-        for _ in range(self.__position)
-        [print(" ", end="")]
-        for _ in range(self.__size):
-            [print("#" * self.__size, end="")]
+
+        [print("") for i in range(0, self.__position[0])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
