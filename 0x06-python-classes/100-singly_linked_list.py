@@ -55,7 +55,10 @@ class SinglyLinkedList:
         return result
 
     def sorted_insert(self, value):
-        """insets new node to a singly linked list"""
+        """insets new node to a singly linked list:
+	Args:
+	value: the node to insert
+	"""
         new_node = Node(value)
 
         if not self.__head:
