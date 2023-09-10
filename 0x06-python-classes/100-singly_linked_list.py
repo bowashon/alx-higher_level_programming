@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defining a class Nose that defines a node of a singly linked list"""
+"""This module defining a class Node that defines a node of a singly linked list"""
 
 
 class Node:
