@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""This module defining a class Node that defines a node of a singly linked list"""
+"""This module defining a class Node and singly linked list"""
 
 
 class Node:
     """Define class Nose that defines a node of a singly linked list"""
+
     def __init__(self, data, next_node=None):
         """instantiate the class
         Attribute:
@@ -33,7 +34,7 @@ class Node:
     @next_node.setter
     def next_node(self, value):
         """ Defines the next_node """
-        if not isinstance(value, Node) and value not None:
+        if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
@@ -45,20 +46,11 @@ class SinglyLinkedList:
         """Initialize the head to None"""
         self.__head = None
 
-    def __str__(self):
-        """Return a string representation of the linked list."""
-        current = self.__head
-        result = ""
-        while current:
-            result += str(current.data) + "\n"
-            current = current.next_node
-        return result
-
     def sorted_insert(self, value):
         """insets new node to a singly linked list:
-	Args:
-	value: the node to insert
-	"""
+        Args:
+        value: the node to insert
+        """
         new_node = Node(value)
 
         if not self.__head:
@@ -76,3 +68,10 @@ class SinglyLinkedList:
 
         new_node.next_node = current.next_node
         current.next_node = new_node
+
+    def __str__(self):
+        result = ""
+        while current:
+            result += str(current.data)
+            current = current.next_node
+        return result
