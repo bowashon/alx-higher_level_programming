@@ -52,11 +52,11 @@ class Rectangle:
         """Defines string for printing the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
-        return ((str(self.print_symbol) * self.__width + '\n') * self.__height)
+        return ((str(self.print_symbol) * self.__width + '\n') * self.__height)[:-1]
 
     def __repr__(self):
         """Defines the string representation of the rectangle"""
-        return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
+        return "Rectangle(" + str(self.width) + "," + str(self.height) + ")"
 
     def __del__(self):
         """Print a message when an instance of a class
