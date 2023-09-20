@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Function that divides all element in a matrix"""
+
+
 def matrix_divided(matrix, div):
     """Function that divides all element of a matrix
     Args:
