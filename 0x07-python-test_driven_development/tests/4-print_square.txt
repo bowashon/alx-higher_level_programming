@@ -44,26 +44,20 @@ Test negative:
     ...
     ValueError: size must be >= 0
 
-Test float:
-    >>> print_square(2.0)
-    Trackback (most recent call last):
+Test float input:
+    >>> print_square(2.5)
+    Traceback (most recent call last):
     ...
     TypeError: size must be an integer
 
-Test str:
+Test string input:
     >>> print_square("name")
-    Trackback (most recent call last):
+    Traceback (most recent call last):
     ...
     TypeError: size must be an integer
 
-Test none:
+Test none input:
     >>> print_square(None)
-    Trackback (most recent call last):
-    ...
-    ValueError: size must be >= 0
-
-Test inf:
-    >>> print_square("inf")
-    Trackback (most recent call last):
+    Traceback (most recent call last):
     ...
     TypeError: size must be an integer
