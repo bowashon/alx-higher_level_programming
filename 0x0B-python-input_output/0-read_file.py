@@ -4,7 +4,7 @@
 
 def read_file(filename=""):
     """
-    Definiition: 
+    Definiition:
         funtion that reads a text file in (UTF8)
     Args:
         filename: the name of the file provided
