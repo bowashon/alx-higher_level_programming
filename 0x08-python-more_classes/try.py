@@ -1,2 +1,0 @@
-#!/use/bin/python3
-

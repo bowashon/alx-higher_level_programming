@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import string
-print(string.ascii_uppercase, end='\n')
+import my_alpabet
+print(my_alpabet, end='\n')
