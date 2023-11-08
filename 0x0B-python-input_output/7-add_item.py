@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""the add item module"""
 import json
 import sys
-"""the add item module"""
 
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
