@@ -79,7 +79,11 @@ class Base:
         """
         Returns a list of instances
         """
-        if cls is None:
+        from os import path
+
+        my_file = "{}.json".format(cls.__name__)
+
+        if not path.isfile(my_file):
             return []
 
         with open("{}.json".format(cls.__name__), 'r', encoding="UTF8") as f:
