@@ -27,6 +27,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be  >= 0")
+        self.__widht = value
 
     @property
     def height(self):
@@ -40,6 +41,7 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
         """Public instance method"""
@@ -59,7 +61,7 @@ class Rectangle:
             return ""
 
     def __repr__(self):
-        print("Rectangle({}, {})".format(self.__width, self.__height))
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
 
     def __del__(self):
         print("Bye rectangle...")
