@@ -11,4 +11,4 @@ class MyList(list):
         public method that prints the list
         but sorted (ascending sort)
         """
-        return (sorted(self))
+        print(sorted(self))
