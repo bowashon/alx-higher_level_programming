@@ -41,6 +41,19 @@ Test normal list:
     >>> ml.print_sorted()
     [1, 2, 3, 5, 9]
 
+check print_sorted() with no sorted append with negative number:
+    >>> ml = MyList()
+    >>> ml.append(-2)
+    >>> ml.append(-1)
+    >>> ml.append(-5)
+    >>> ml.print_sorted()
+    [-5, -2, -1]
+
+Test for str:
+    >>> ml = MyList([2, 4, 6, 7])
+    >>> str(ml)
+    '[2, 4, 6, 7]'
+
 Test for append:
     >>> my_list = MyList()
     >>> my_list.append(1)
