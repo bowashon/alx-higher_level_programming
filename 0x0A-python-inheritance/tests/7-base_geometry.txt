@@ -1,0 +1,30 @@
+The ``BaseGeometry`` model
+==========================
+
+
+Using the ``BaseGeometry`` model
+----------------------------------
+
+Import model from:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+Test for object creation:
+    >>> bg = BaseGeometry()
+    >>> type(bg)
+    <class '7-base_geometry.BaseGeometry'>
+
+Test for correct instance:
+    >>> bg = BaseGeometry()
+    >>> isinstance(bg, BaseGeometry)
+    True
+
+Test for area method through obj:
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+Test for area method is an instance method:
+    >>> type(bg.__dict__['area'])
+
