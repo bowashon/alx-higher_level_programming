@@ -49,6 +49,18 @@ Test for first arg string:
     ...
     TypeError: a must be an integer
 
+Test on nan:
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Test on float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
 Test for string:
     >>> add_integer("foo", "foo")
     Traceback (most recent call last):

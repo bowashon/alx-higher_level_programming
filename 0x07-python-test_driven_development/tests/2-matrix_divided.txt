@@ -1,0 +1,54 @@
+The ``matrix_divided`` module
+==================================
+
+Using the 'matrix_divided'
+---------------------------
+
+Import function module:
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+Test matrix with non-zero int div:
+    >>> matrix_divided(matrix, 3)
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test on matrix with float:
+    >>> matrix_divided(matrix, 2.5)
+    [[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
+
+Test on matrix with zero:
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Test on matrix with a string:
+    >>> matrix_divided(matrix, "foo")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Test on matrix with a negative int:
+    >>> matrix_divided(matrix, -4)
+    [[-0.25, -0.5, -0.75], [-1.0, -1.25, -1.5]]
+
+    >>> matrix_b = [[]]
+
+Test on empty matrix:
+    >>> matrix_divided(matrix_b, 2)
+    [[]]
+
+Test on unequal matrix row size:
+    >>> matrix_c = [[1, 2, 3, 4], [5, 6.5, 7]]
+    >>> matrix_divided(matrix_c, -4)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Test on matrix of string:
+    >>> matrix_d = [['food', 'water', 'salt']]
+    >>> matrix_divided(matrix_d, -2)
+    Traceback (most recent call last):
+    ...
+    ValueError: matrix must be a matrix (list of lists) of integers/floats
