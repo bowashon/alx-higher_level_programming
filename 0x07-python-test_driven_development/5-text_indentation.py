@@ -9,16 +9,14 @@ def text_indentation(text):
         each of these characters: ., ? and :
     Arg:
         text: points to the text string
-    Raise: 
+    Raise:
         TypeError: text must be a string. if text is not a string
     """
-    
-    characters = ('.', '?', ':')
-    new_text = ""
+    if not isinstance(text, str):
+        raise TypeError("text must be a string")
 
-    for char in text:
-        new_text += char
-        if char in characters:
-            del(char)
-        new_text += char + '\n\n'
-    print(new_text, end='')
+    for delim in ".?:":
+        text = (delim + "\n\n").join(
+                    [line.strip(" ") for line in text.split(delim)])
+
+    print(text, end='')
