@@ -6,7 +6,7 @@ if (i !== undefined) {
     for (let a = 0; a < i; a++) {
       let row = '';
       for (let b = 0; b < i; b++) {
-        row += 'x';
+        row += 'X';
       }
       console.log(row);
     }
